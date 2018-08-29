@@ -150,14 +150,14 @@ new THREE.MTLLoader()
 
   new THREE.MTLLoader()
   .setPath( './models/' )
-  .load( 'slide.mtl', function ( materials ) {
+  .load( 'Slide.mtl', function ( materials ) {
 
     materials.preload();
 
     new THREE.OBJLoader()
       .setMaterials( materials )
       .setPath( './models/' )
-      .load( 'slide.obj', function ( object ) {
+      .load( 'Slide.obj', function ( object ) {
 
         object.scale.set(0.2,0.2,0.2)
 				object.position.set(150,0,-150)
