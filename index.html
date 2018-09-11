@@ -1,69 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" >
+
 <head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.6/fabric.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <meta charset="UTF-8">
+  <title>THREE.js animated camera pan & zoom to object</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-
+  
+  
+  
 </head>
 
 <body>
-<button onClick="newAnimation()">new Animation</button>
-<button onClick="addRect()">Rectangle</button>
-<button onClick="addImage()">Image</button>
-<button onClick="addCircle()">Circle</button>
-<button onClick="deleteObject()">Delete</button>
-<canvas id="canvas" width="600" height="300"></canvas>
 
-<script>
-<!-- var canvas = new fabric.Canvas('c'); -->
+  <script src='https://threejs.org/build/three.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
+  <script src='https://threejs.org/examples/js/controls/TrackballControls.js'></script>
 
-<!-- fabric.Image.fromURL('./test.png', function(img) { -->
-	<!-- canvas.add(img); -->
-<!-- }); -->
+  <script src="js/controls/MapControls.js"></script>
+  <script src="js/loaders/MTLLoader.js"></script>
+  <script src="js/loaders/OBJLoader.js"></script>
+
+  <script src='js/libs/dat.gui.min.js'></script>
+  <!-- <script src="js/controls/OrbitControls.js"></script> -->
+  <script src="js/Detector.js"></script>
+
+  <script  src="js/index.js"></script>
 
 
-var canvas; 
-window.newAnimation = function(){
-   canvas = new fabric.Canvas('canvas');
-}
 
-window.addRect = function(){
-    var rect = new fabric.Rect({
-  left: 100,
-  top: 100,
-  fill: 'red',
-  width: 20,
-  height: 20,
-});
-    canvas.add(rect);
-
-}
-
-window.addImage = function(){
-
-  var image = new fabric.Image.fromURL('./test.png', function(img) { 
-  
-	canvas.add(img);
-	
-	});
-
-}
-
-window.addCircle = function(){
-    var circle = new fabric.Circle({
-  radius: 20, fill: 'green', left: 100, top: 100
-});
-    canvas.add(circle);
-}
-
-window.deleteObject = function() {
-       canvas.remove(canvas.getActiveObject());
-}
-</script>
 
 </body>
 
-
-
- 
 </html>
